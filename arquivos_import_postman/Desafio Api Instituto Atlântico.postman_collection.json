@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "579dcff3-cc15-48a3-bcb6-368d538eaee6",
+		"name": "Desafio Api Instituto Atlântico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "buscar filme pelo nome",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d93c2d1e-25c2-468d-80f5-113416dd9004",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "418e0a47",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-Email",
+						"value": "ruidealencar@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "X-User-Token",
+						"value": "1udp_8May4sirFwkYzjT",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"consult_movie_by_name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "hackers",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar filme pelo id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "418e0a47",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-Email",
+						"value": "ruidealencar@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "X-User-Token",
+						"value": "1udp_8May4sirFwkYzjT",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_id?id=tt1905051",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"consult_movie_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "tt1905051"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

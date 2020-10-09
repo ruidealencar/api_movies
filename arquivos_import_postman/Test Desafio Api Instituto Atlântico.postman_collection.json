@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "103c2a62-0f31-4a93-bbbf-a85df8febb47",
+		"name": "Test Desafio Api Instituto Atlântico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "buscar filme pelo nome sem params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccca99d5-9103-40b5-a8a4-855f928f2232",
+						"exec": [
+							"",
+							"pm.test(\"status code\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(400);",
+							"});",
+							"",
+							"pm.test(\"message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"Nenhum filme encontrado\");",
+							"});",
+							"",
+							"pm.test(\"movies\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData)",
+							"    pm.expect(jsonData.movies['movie']).to.eql({});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "418e0a47",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-Email",
+						"type": "text",
+						"value": "ruidealencar@gmail.com"
+					},
+					{
+						"key": "X-User-Token",
+						"type": "text",
+						"value": "1udp_8May4sirFwkYzjT"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"consult_movie_by_name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "hackers",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar filme pelo id errado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd299f69-c684-4e17-a9d5-1620b052358b",
+						"exec": [
+							"",
+							"pm.test(\"status code\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(400);",
+							"});",
+							"",
+							"pm.test(\"message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"Nenhum filme encontrado\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "418e0a47",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-Email",
+						"type": "text",
+						"value": "ruidealencar@gmail.com"
+					},
+					{
+						"key": "X-User-Token",
+						"type": "text",
+						"value": "1udp_8May4sirFwkYzjT"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_id?id=tt19050512",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"consult_movie_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "tt19050512"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar filme pelo nome status ok",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "57298ed8-0a71-4db4-bd63-ec333d70081e",
+						"exec": [
+							"pm.test(\"status request\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData)",
+							"    pm.expect(jsonData.status).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"status code\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "418e0a47",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-Email",
+						"value": "ruidealencar@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "X-User-Token",
+						"value": "1udp_8May4sirFwkYzjT",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_name?name=hackers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"consult_movie_by_name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "hackers"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a1967101-cfac-4867-ae00-2a7e0faab545",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fbd08f9e-d92b-430b-9a33-f516168ce3b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
