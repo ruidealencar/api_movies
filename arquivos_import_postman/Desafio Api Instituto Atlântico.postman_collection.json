@@ -54,7 +54,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_name",
+					"raw": "http://localhost:3000/api/v1/movies/consult_movie_by_name?name=hackers",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -69,7 +69,11 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "hackers",
+							"value": "hackers"
+						},
+						{
+							"key": "name",
+							"value": "inoxidavel",
 							"disabled": true
 						}
 					]
@@ -132,6 +136,77 @@
 							"value": "tt1905051"
 						}
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar filme pelo nome heroku",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "418e0a47",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-Email",
+						"value": "ruidealencar@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "X-User-Token",
+						"value": "1udp_8May4sirFwkYzjT",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apidesafioia.herokuapp.com/api/v1/movies/consult_movie_by_name?name=hackers",
+					"protocol": "https",
+					"host": [
+						"apidesafioia",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"consult_movie_by_name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "hackers"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar filme pelo id heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
 				}
 			},
 			"response": []

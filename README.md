@@ -8,6 +8,10 @@ A API deverá ser desenvolvida em Ruby on Rails.
 
 Esse serviço deve se comunicar com a API OMDb API para fornecer os dados de uma forma diferente da API externa.
 
+## Deploy Heroku
+
+* https://apidesafioia.herokuapp.com
+
 
 ## Technology 
 
